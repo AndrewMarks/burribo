@@ -106,4 +106,41 @@ document.querySelectorAll('.reveal-heading').forEach(heading => {
 // ============================================
 // Section Transitions
 // ============================================
-// Placeholder for Plan 03-03 implementation
+
+// Section content fade-in
+// Set initial state (hidden)
+gsap.set(".reveal-section", { opacity: 0, y: 40 });
+
+// Animate each section when it enters viewport
+document.querySelectorAll('.reveal-section').forEach(section => {
+  gsap.to(section, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+      toggleActions: "play none none none"  // Don't reverse
+    }
+  });
+});
+
+// Card batch animation (staggered reveal)
+// Set initial state for cards
+gsap.set(".card", { opacity: 0, y: 30 });
+
+// Batch animate cards when they enter viewport
+ScrollTrigger.batch(".card", {
+  onEnter: batch => {
+    gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 0.6,
+      ease: "power2.out"
+    });
+  },
+  start: "top 90%",
+  once: true  // Only animate once
+});

@@ -32,7 +32,7 @@ title: Home
 </section>
 
 <section class="work section--content" id="work">
-  <div class="section-inner">
+  <div class="section-inner reveal-section">
     <div class="section-header">
       <h2 class="reveal-heading">Work</h2>
     </div>
@@ -52,7 +52,7 @@ title: Home
 </section>
 
 <section class="about section--content" id="about">
-  <div class="section-inner">
+  <div class="section-inner reveal-section">
     <div class="section-header">
       <h2 class="reveal-heading">About</h2>
     </div>
@@ -61,7 +61,7 @@ title: Home
 </section>
 
 <section class="contact section--content" id="contact">
-  <div class="section-inner">
+  <div class="section-inner reveal-section">
     <div class="section-header">
       <h2 class="reveal-heading">Contact</h2>
     </div>
