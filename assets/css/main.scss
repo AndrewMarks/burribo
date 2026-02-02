@@ -32,7 +32,7 @@
   --color-fg-subtle: #555555;   // Darker gray
 
   // Accent colors (high-contrast pops)
-  --color-accent: #e63600;      // Deep orange-red (distinct from helloMuller)
+  --color-accent: #e63600;      // Deep orange-red
   --color-accent-hover: #ff4a1a; // Brighter orange for hover states
   --color-accent-alt: #1f8eff;  // Secondary accent (reserved for later)
 
@@ -51,7 +51,7 @@
   --font-weight-bold: 800;      // Extra-bold for massive headers
   --font-weight-normal: 400;    // Regular for body text
 
-  // Type scale (inspired by hellomuller.com boldness)
+  // Type scale
   --text-hero: 6rem;            // 96px - massive homepage title
   --text-display: 4rem;         // 64px - section headers
   --text-lg: 1.5rem;            // 24px - subheadings
