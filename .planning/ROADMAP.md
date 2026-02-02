@@ -63,8 +63,8 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Persistent header with scroll behavior
-- [ ] 03-02: Scroll-triggered text reveals and animations
+- [x] 03-01: Persistent header with scroll behavior
+- [x] 03-02: Scroll-triggered text reveals and animations
 - [ ] 03-03: Section transitions and navigation
 
 ### Phase 4: Portfolio Templates
@@ -120,7 +120,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 1. Foundation | 2/2 | Complete | 2026-02-01 |
 | 2. Design System | 3/3 | Complete | 2026-02-01 |
 | 2.1 Hero Visual Redesign | 1/1 | Complete | 2026-02-02 |
-| 3. Scroll Experience | 0/3 | Not started | - |
+| 3. Scroll Experience | 2/3 | In progress | - |
 | 4. Portfolio Templates | 0/2 | Not started | - |
 | 5. Portfolio Content | 0/4 | Not started | - |
 | 6. Blog | 0/2 | Not started | - |
