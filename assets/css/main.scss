@@ -32,8 +32,8 @@
   --color-fg-subtle: #555555;   // Darker gray
 
   // Accent colors (high-contrast pops)
-  --color-accent: #ff4500;      // Vivid orange-red (helloMuller-inspired)
-  --color-accent-hover: #ff5a1a; // Brighter orange for hover states
+  --color-accent: #e63600;      // Deep orange-red (distinct from helloMuller)
+  --color-accent-hover: #ff4a1a; // Brighter orange for hover states
   --color-accent-alt: #1f8eff;  // Secondary accent (reserved for later)
 
   // Legacy alias for backwards compatibility
@@ -119,39 +119,46 @@ h3 {
   z-index: 100;
   padding: var(--space-sm) var(--space-md);
   background-color: transparent;
-  border-bottom: 1px solid var(--color-bg-deep);
+  border-top: 3px solid #000000;
 
   .header-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     max-width: none;
     margin: 0;
+    gap: 0;
   }
 
   .site-logo {
     font-family: var(--font-primary);
     font-weight: 700;
     text-decoration: none;
-    color: var(--color-fg);
+    color: #000000;
     letter-spacing: -0.01em;
     font-size: var(--text-sm);
+    margin-right: auto;
   }
 
   .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--space-lg);
+    gap: 0;
+    width: 100%;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: var(--space-xl);
   }
 
   .nav-link {
     text-decoration: none;
-    color: var(--color-fg);
+    color: #000000;
     font-size: var(--text-sm);
-    transition: color 0.2s ease;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      color: var(--color-accent);
+      opacity: 0.6;
     }
   }
 }
@@ -209,7 +216,7 @@ section {
     font-size: clamp(4rem, 15vw, 12rem);
     font-weight: 900;
     line-height: 0.85;
-    color: var(--color-bg-deep);
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     margin-bottom: var(--space-sm);
@@ -217,9 +224,9 @@ section {
 
   .tagline {
     font-size: var(--text-base);
-    color: var(--color-bg-deep);
+    color: #000000;
     font-weight: var(--font-weight-normal);
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   // Hide button on hero for now - let typography be the focus
