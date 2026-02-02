@@ -834,3 +834,75 @@ section {
     }
   }
 }
+
+// ============================================
+// Company Showcase Template
+// ============================================
+
+// Company hero section
+.company-hero {
+  min-height: 50vh;
+  background-color: var(--color-bg-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.company-hero__logo {
+  max-width: 200px;
+  max-height: 100px;
+  margin-bottom: var(--space-md);
+}
+
+.company-hero h1 {
+  font-size: var(--text-display);
+  margin-bottom: var(--space-xs);
+}
+
+.company-hero .tagline {
+  font-size: var(--text-lg);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-md);
+  max-width: 600px;
+}
+
+.company-hero .btn {
+  margin-top: var(--space-sm);
+}
+
+// Company content section
+.company-content {
+  padding: var(--space-xl) var(--space-md);
+
+  h2 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  p {
+    max-width: 65ch;
+    margin-bottom: var(--space-sm);
+  }
+}
+
+// Services grid for company pages
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.service-item {
+  padding: var(--space-md);
+  background: var(--color-bg-elevated);
+  border-left: 3px solid var(--color-accent);
+}
+
+.service-item h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+}
