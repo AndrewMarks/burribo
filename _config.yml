@@ -1,0 +1,28 @@
+title: Andrew Marks
+description: Portfolio - Game Dev, TTRPG, Marketing, Theatre
+baseurl: ""  # For user/org pages, leave empty
+url: ""      # Will be set by GitHub Pages
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .planning/
+
+# Collections (for future portfolio items)
+collections_dir: collections
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

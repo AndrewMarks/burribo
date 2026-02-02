@@ -1,0 +1,579 @@
+---
+# Front matter required for Jekyll SCSS processing
+---
+
+// ============================================
+// CSS Reset (Minimal)
+// ============================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ============================================
+// Root Variables - Design System
+// ============================================
+:root {
+  // ----------------------------------------
+  // Colors - VALORANT-inspired palette
+  // ----------------------------------------
+
+  // Background tones (dark dominant, refined)
+  --color-bg-deep: #0a0a0a;    // Near-black for hero/main backgrounds
+  --color-bg: #111111;          // Dark for sections
+  --color-bg-elevated: #1a1a1a; // Slightly lighter for cards/elevated surfaces
+
+  // Foreground
+  --color-fg: #ffffff;          // Pure white
+  --color-fg-muted: #888888;    // Soft gray
+  --color-fg-subtle: #555555;   // Darker gray
+
+  // Accent colors (high-contrast pops)
+  --color-accent: #ff4655;      // VALORANT red
+  --color-accent-hover: #ff5c69; // Brighter red for hover states
+  --color-accent-alt: #1f8eff;  // Secondary accent (reserved for later)
+
+  // Legacy alias for backwards compatibility
+  --color-muted: var(--color-fg-muted);
+
+  // ----------------------------------------
+  // Typography
+  // ----------------------------------------
+
+  // Font families
+  --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  // Font weights
+  --font-weight-bold: 800;      // Extra-bold for massive headers
+  --font-weight-normal: 400;    // Regular for body text
+
+  // Type scale (inspired by hellomuller.com boldness)
+  --text-hero: 6rem;            // 96px - massive homepage title
+  --text-display: 4rem;         // 64px - section headers
+  --text-lg: 1.5rem;            // 24px - subheadings
+  --text-base: 1rem;            // 16px - body
+  --text-sm: 0.875rem;          // 14px - captions/meta
+
+  // ----------------------------------------
+  // Spacing
+  // ----------------------------------------
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+}
+
+// ============================================
+// Base Typography
+// ============================================
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  line-height: 1.6;
+  font-size: var(--text-base);
+}
+
+// Heading styles - bold, impactful type
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--text-display);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+// ============================================
+// Layout Structure
+// ============================================
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-deep);
+  border-bottom: 1px solid var(--color-bg-elevated);
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .site-logo {
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--color-fg);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--color-fg);
+    font-size: var(--text-sm);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.site-main {
+  margin-top: 60px; // Account for fixed header
+}
+
+.site-footer {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .copyright {
+    color: var(--color-fg-muted);
+    font-size: var(--text-sm);
+  }
+}
+
+// ============================================
+// Section Base Styles
+// ============================================
+section {
+  padding: var(--space-xl) var(--space-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-bg);
+
+  h2 {
+    // Uses --text-display from heading styles
+    margin-bottom: var(--space-md);
+  }
+}
+
+// ============================================
+// Hero Section
+// ============================================
+.hero {
+  text-align: center;
+  background-color: var(--color-bg-deep);
+
+  h1 {
+    // Uses --text-hero from heading styles
+    color: var(--color-fg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .tagline {
+    font-size: var(--text-lg);
+    color: var(--color-fg-muted);
+    font-weight: var(--font-weight-normal);
+  }
+}
+
+// ============================================
+// Geometric Utilities
+// ============================================
+
+// Geometric variables
+:root {
+  --angle-cut-size: 40px;   // Height of diagonal cuts
+  --angle-skew: -5deg;       // Standard parallelogram skew
+}
+
+// Diagonal/angled elements using clip-path for clean cuts
+
+// Slice top edge - left-leaning (higher on left)
+.angle-cut-top {
+  clip-path: polygon(0 var(--angle-cut-size), 100% 0, 100% 100%, 0 100%);
+}
+
+// Slice top edge - right-leaning (higher on right)
+.angle-cut-top-right {
+  clip-path: polygon(0 0, 100% var(--angle-cut-size), 100% 100%, 0 100%);
+}
+
+// Slice bottom edge - left-leaning (lower on left)
+.angle-cut-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--angle-cut-size)), 0 100%);
+}
+
+// Slice bottom edge - right-leaning (lower on right)
+.angle-cut-bottom-right {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--angle-cut-size)));
+}
+
+// Parallelogram - subtle slant for containers
+.parallelogram {
+  transform: skewX(var(--angle-skew));
+
+  // Inner content counter-skew to keep text straight
+  > * {
+    transform: skewX(calc(var(--angle-skew) * -1));
+  }
+}
+
+// Right-leaning parallelogram variant
+.parallelogram-right {
+  transform: skewX(calc(var(--angle-skew) * -1));
+
+  > * {
+    transform: skewX(var(--angle-skew));
+  }
+}
+
+// Thin diagonal accent line (absolute positioned)
+.angle-stripe {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: var(--color-accent);
+  transform: rotate(-15deg);
+  pointer-events: none;
+
+  // Variants for positioning
+  &--left {
+    transform: rotate(15deg);
+  }
+}
+
+// ============================================
+// Section Overlap & Depth Patterns
+// ============================================
+
+// Overlap variables
+:root {
+  --overlap-size: 4rem;  // Default overlap amount
+}
+
+// Section overlap - element overlaps previous section
+.section-overlap-top {
+  position: relative;
+  margin-top: calc(-1 * var(--overlap-size));
+  z-index: 1;
+}
+
+// Section overlap - element extends into next section
+.section-overlap-bottom {
+  position: relative;
+  margin-bottom: calc(-1 * var(--overlap-size));
+  z-index: 2;
+}
+
+// Hero-specific overlap pattern
+.hero-overlap {
+  position: relative;
+  margin-bottom: calc(-1 * var(--overlap-size));
+  z-index: 2;
+}
+
+// Z-index layering utilities
+.z-lift-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.z-lift-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.z-lift-3 {
+  position: relative;
+  z-index: 3;
+}
+
+// Visual depth without fake shadows - uses elevated background
+.depth-layer {
+  background-color: var(--color-bg-elevated);
+}
+
+// Thin accent-colored border for definition
+.border-accent {
+  border: 1px solid var(--color-accent);
+}
+
+// Border accent variants
+.border-accent-top {
+  border-top: 2px solid var(--color-accent);
+}
+
+.border-accent-bottom {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.border-accent-left {
+  border-left: 2px solid var(--color-accent);
+}
+
+// ============================================
+// Decorative Shapes
+// ============================================
+
+// Container for absolute-positioned decorations
+.decorative-shapes {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+// Small diamond/rhombus shape
+.deco-diamond {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+// Diagonal slash accent line
+.deco-slash {
+  display: block;
+  width: 2px;
+  height: 40px;
+  background: var(--color-accent);
+  transform: rotate(-15deg);
+  position: absolute;
+}
+
+// Small circular accent dot
+.deco-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  position: absolute;
+}
+
+// Size variants
+.deco-diamond--lg {
+  width: 20px;
+  height: 20px;
+}
+
+.deco-slash--lg {
+  height: 60px;
+}
+
+.deco-dot--lg {
+  width: 12px;
+  height: 12px;
+}
+
+// Color variants using muted accent
+.deco-diamond--muted,
+.deco-slash--muted,
+.deco-dot--muted {
+  background: var(--color-fg-subtle);
+}
+
+// ============================================
+// Components: Buttons
+// ============================================
+
+// Base button styles
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+// Primary button - solid accent background
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg-deep);
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+}
+
+// Secondary button - outline style
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-deep);
+    transform: translateY(-2px);
+  }
+}
+
+// ============================================
+// Components: Cards
+// ============================================
+
+// Base card styles
+.card {
+  background: var(--color-bg-elevated);
+  padding: var(--space-md);
+  border: 1px solid var(--color-bg);
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+  }
+}
+
+// Card title
+.card-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+  color: var(--color-fg);
+}
+
+// Card meta/subtitle text
+.card-meta {
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-sm);
+}
+
+// Card body content
+.card-body {
+  color: var(--color-fg);
+  font-size: var(--text-base);
+}
+
+// Featured card variant with image
+.card-featured {
+  padding: 0;
+
+  .card-image {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .card-content {
+    padding: var(--space-md);
+  }
+}
+
+// Card grid layout
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+// ============================================
+// Components: Section Variants
+// ============================================
+
+// Section variant: Hero - full viewport, centered, deep background
+.section--hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-bg-deep);
+  position: relative;
+}
+
+// Section variant: Content - standard padding, normal background
+.section--content {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+// Section variant: Feature - elevated, can combine with geometric cuts
+.section--feature {
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--color-bg-elevated);
+  position: relative;
+}
+
+// Section header pattern with accent underline
+.section-header {
+  margin-bottom: var(--space-lg);
+
+  h2 {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--color-accent);
+    }
+  }
+}
+
+// Section inner container for max-width content
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}

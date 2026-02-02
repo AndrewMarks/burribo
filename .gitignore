@@ -1,0 +1,15 @@
+# Planning and AI-generated docs (local only)
+.planning/
+
+# Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
+
+# Ruby gems lock (optional - some prefer to track this)
+# Gemfile.lock
