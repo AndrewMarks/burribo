@@ -26,15 +26,15 @@ title: Home
 
   <!-- Hero content (stays on top) -->
   <div class="hero-content">
-    <h1>Andrew<br>Marks</h1>
-    <p class="tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
+    <h1 class="reveal-hero">Andrew<br>Marks</h1>
+    <p class="tagline reveal-tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
   </div>
 </section>
 
 <section class="work section--content" id="work">
   <div class="section-inner">
     <div class="section-header">
-      <h2>Work</h2>
+      <h2 class="reveal-heading">Work</h2>
     </div>
     <div class="card-grid">
       <div class="card">
@@ -54,7 +54,7 @@ title: Home
 <section class="about section--content" id="about">
   <div class="section-inner">
     <div class="section-header">
-      <h2>About</h2>
+      <h2 class="reveal-heading">About</h2>
     </div>
     <!-- About content will go here -->
   </div>
@@ -63,7 +63,7 @@ title: Home
 <section class="contact section--content" id="contact">
   <div class="section-inner">
     <div class="section-header">
-      <h2>Contact</h2>
+      <h2 class="reveal-heading">Contact</h2>
     </div>
     <!-- Contact info will go here -->
   </div>
