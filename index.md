@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-<section class="hero section--hero" id="hero">
+<section class="hero" id="hero">
   <h1>Andrew Marks</h1>
   <p class="tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
   <div style="margin-top: var(--space-md);">
