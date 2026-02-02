@@ -906,3 +906,118 @@ section {
   font-size: var(--text-lg);
   margin-bottom: var(--space-xs);
 }
+
+// ============================================
+// Portfolio Visual Layout Styles
+// ============================================
+
+// Portfolio hero variant - shorter than homepage, image-ready
+.portfolio-hero {
+  min-height: 60vh;
+  background-color: var(--color-bg-deep);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-xl) var(--space-md);
+  position: relative;
+
+  // Gradient overlay for text readability when image present
+  &--has-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--color-bg-deep) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.portfolio-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.portfolio-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-fg);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-xs);
+}
+
+.portfolio-hero__subtitle {
+  color: var(--color-fg-muted);
+  font-size: var(--text-lg);
+  font-family: var(--font-primary);
+  margin: 0;
+}
+
+// Portfolio content area
+.portfolio-content {
+  min-height: auto;
+}
+
+// Project card enhancements for portfolio
+.project-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-card__image-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.05);
+}
+
+.project-card__role {
+  display: block;
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.project-card__year {
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+  margin: var(--space-xs) 0;
+}
+
+// Image gallery styles - simple responsive grid
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-sm);
+}
+
+.image-gallery__item {
+  overflow: hidden;
+}
+
+.image-gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery__item:hover img {
+  transform: scale(1.05);
+}
