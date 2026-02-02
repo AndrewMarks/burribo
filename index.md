@@ -4,10 +4,17 @@ title: Home
 ---
 
 <section class="hero" id="hero">
-  <h1>Andrew<br>Marks</h1>
-  <p class="tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
-  <div style="margin-top: var(--space-md);">
-    <a href="#work" class="btn btn-primary">View Work</a>
+  <!-- Space background layers -->
+  <div class="space-bg">
+    <div class="stars stars-1"></div>
+    <div class="stars stars-2"></div>
+    <div class="stars stars-3"></div>
+  </div>
+
+  <!-- Hero content (stays on top) -->
+  <div class="hero-content">
+    <h1>Andrew<br>Marks</h1>
+    <p class="tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
   </div>
 </section>
 
