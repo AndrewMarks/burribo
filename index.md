@@ -4,7 +4,7 @@ title: Home
 ---
 
 <section class="hero" id="hero">
-  <h1>Andrew Marks</h1>
+  <h1>Andrew<br>Marks</h1>
   <p class="tagline">Game Developer | TTRPG Designer | Marketer | Theatre Artist</p>
   <div style="margin-top: var(--space-md);">
     <a href="#work" class="btn btn-primary">View Work</a>

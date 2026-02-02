@@ -32,7 +32,7 @@
   --color-fg-subtle: #555555;   // Darker gray
 
   // Accent colors (high-contrast pops)
-  --color-accent: #e63600;      // Deep orange-red
+  --color-accent: #cc2200;      // Dark crimson red
   --color-accent-hover: #ff4a1a; // Brighter orange for hover states
   --color-accent-alt: #1f8eff;  // Secondary accent (reserved for later)
 
@@ -203,13 +203,14 @@ section {
 // Hero Section
 // ============================================
 .hero {
-  text-align: left;
+  text-align: right;
   background-color: var(--color-accent);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
   padding-bottom: var(--space-lg);
+  padding-right: var(--space-md);
 
   h1 {
     font-family: var(--font-display);
