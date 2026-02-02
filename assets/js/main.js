@@ -144,3 +144,50 @@ ScrollTrigger.batch(".card", {
   start: "top 90%",
   once: true  // Only animate once
 });
+
+// ============================================
+// Navigation Smooth Scroll
+// ============================================
+
+// Smooth scroll for anchor links using Lenis
+// Lenis handles the smooth scrolling, we add offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      // Lenis scrollTo with offset for fixed header
+      lenis.scrollTo(target, {
+        offset: -80  // Account for header height
+      });
+    }
+  });
+});
+
+// ============================================
+// Navigation Active State
+// ============================================
+
+// Update active nav link based on scroll position
+function setActiveNav(activeId) {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('is-active');
+    if (link.getAttribute('href') === `#${activeId}`) {
+      link.classList.add('is-active');
+    }
+  });
+}
+
+// Create ScrollTriggers for each section to update active nav
+const sections = ['hero', 'work', 'about', 'contact'];
+
+sections.forEach(sectionId => {
+  ScrollTrigger.create({
+    trigger: `#${sectionId}`,
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => setActiveNav(sectionId),
+    onEnterBack: () => setActiveNav(sectionId)
+  });
+});
