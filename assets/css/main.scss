@@ -32,8 +32,8 @@
   --color-fg-subtle: #555555;   // Darker gray
 
   // Accent colors (high-contrast pops)
-  --color-accent: #ff4655;      // VALORANT red
-  --color-accent-hover: #ff5c69; // Brighter red for hover states
+  --color-accent: #ff4500;      // Vivid orange-red (helloMuller-inspired)
+  --color-accent-hover: #ff5a1a; // Brighter orange for hover states
   --color-accent-alt: #1f8eff;  // Secondary accent (reserved for later)
 
   // Legacy alias for backwards compatibility
@@ -133,7 +133,7 @@ h3 {
     font-family: var(--font-primary);
     font-weight: 700;
     text-decoration: none;
-    color: var(--color-bg-deep);
+    color: var(--color-fg);
     letter-spacing: -0.01em;
     font-size: var(--text-sm);
   }
@@ -146,7 +146,7 @@ h3 {
 
   .nav-link {
     text-decoration: none;
-    color: var(--color-bg-deep);
+    color: var(--color-fg);
     font-size: var(--text-sm);
     transition: color 0.2s ease;
 
