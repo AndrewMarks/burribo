@@ -9,6 +9,19 @@ title: Home
     <div class="stars stars-1"></div>
     <div class="stars stars-2"></div>
     <div class="stars stars-3"></div>
+
+    <!-- Clickable easter egg hotspots -->
+    <div class="hotspots">
+      <button class="hotspot" style="top: 20%; left: 15%;">
+        <span class="tooltip">🎮 First game shipped: 2015</span>
+      </button>
+      <button class="hotspot" style="top: 50%; left: 75%;">
+        <span class="tooltip">🎭 Theatre shows performed: 12+</span>
+      </button>
+      <button class="hotspot" style="top: 70%; left: 40%;">
+        <span class="tooltip">🎲 TTRPGs designed: 3</span>
+      </button>
+    </div>
   </div>
 
   <!-- Hero content (stays on top) -->
