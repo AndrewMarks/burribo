@@ -1,12 +1,12 @@
 /**
  * Main JavaScript - Animation Foundation
- * GSAP + ScrollTrigger + SplitText + Lenis
+ * GSAP + ScrollTrigger + Lenis
  */
 
 // ============================================
 // Register GSAP Plugins
 // ============================================
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 // ============================================
 // Lenis Smooth Scroll Initialization
@@ -29,46 +29,20 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 // ============================================
-// Header Scroll Behavior
+// Text Reveal Animations (without SplitText)
 // ============================================
-const header = document.querySelector('.site-header');
 
-if (header) {
-  // Use ScrollTrigger for discrete state change (not scrub)
-  // Toggles between "top" and "scrolled" states at 100px scroll
-  ScrollTrigger.create({
-    trigger: document.body,
-    start: 'top -100',
-    end: 'max',
-    onEnter: () => {
-      header.setAttribute('data-scroll-state', 'scrolled');
-    },
-    onLeaveBack: () => {
-      header.setAttribute('data-scroll-state', 'top');
-    }
+// Hero name - dramatic reveal from bottom with clip mask
+const heroText = document.querySelector('.reveal-hero');
+if (heroText) {
+  gsap.from(heroText, {
+    yPercent: 100,
+    opacity: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    delay: 0.3
   });
 }
-
-// ============================================
-// Text Reveal Animations
-// ============================================
-
-// Hero name - split by lines, reveal from bottom with mask
-// Dramatic, slower reveal for the main title
-SplitText.create(".reveal-hero", {
-  type: "lines",
-  mask: "lines",
-  autoSplit: true,
-  onSplit(self) {
-    return gsap.from(self.lines, {
-      yPercent: 100,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.3  // Slight delay after page load
-    });
-  }
-});
 
 // Tagline reveal - fade + slide up after hero text
 gsap.from(".reveal-tagline", {
@@ -76,29 +50,20 @@ gsap.from(".reveal-tagline", {
   opacity: 0,
   duration: 0.8,
   ease: "power2.out",
-  delay: 0.8  // After hero text animation
+  delay: 1.0  // After hero text animation
 });
 
 // Section heading reveals - scroll-triggered
-// Each heading animates when it enters the viewport
 document.querySelectorAll('.reveal-heading').forEach(heading => {
-  SplitText.create(heading, {
-    type: "words,lines",
-    mask: "lines",
-    autoSplit: true,
-    onSplit(self) {
-      return gsap.from(self.lines, {
-        yPercent: 100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: heading,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      });
+  gsap.from(heading, {
+    y: 60,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: heading,
+      start: "top 85%",
+      toggleActions: "play none none none"
     }
   });
 });
@@ -150,44 +115,13 @@ ScrollTrigger.batch(".card", {
 // ============================================
 
 // Smooth scroll for anchor links using Lenis
-// Lenis handles the smooth scrolling, we add offset for fixed header
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const targetId = link.getAttribute('href');
     const target = document.querySelector(targetId);
     if (target) {
-      // Lenis scrollTo with offset for fixed header
-      lenis.scrollTo(target, {
-        offset: -80  // Account for header height
-      });
+      lenis.scrollTo(target);
     }
-  });
-});
-
-// ============================================
-// Navigation Active State
-// ============================================
-
-// Update active nav link based on scroll position
-function setActiveNav(activeId) {
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('is-active');
-    if (link.getAttribute('href') === `#${activeId}`) {
-      link.classList.add('is-active');
-    }
-  });
-}
-
-// Create ScrollTriggers for each section to update active nav
-const sections = ['hero', 'work', 'about', 'contact'];
-
-sections.forEach(sectionId => {
-  ScrollTrigger.create({
-    trigger: `#${sectionId}`,
-    start: "top center",
-    end: "bottom center",
-    onEnter: () => setActiveNav(sectionId),
-    onEnterBack: () => setActiveNav(sectionId)
   });
 });
