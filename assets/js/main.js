@@ -31,7 +31,23 @@ gsap.ticker.lagSmoothing(0);
 // ============================================
 // Header Scroll Behavior
 // ============================================
-// Placeholder for Task 2 implementation
+const header = document.querySelector('.site-header');
+
+if (header) {
+  // Use ScrollTrigger for discrete state change (not scrub)
+  // Toggles between "top" and "scrolled" states at 100px scroll
+  ScrollTrigger.create({
+    trigger: document.body,
+    start: 'top -100',
+    end: 'max',
+    onEnter: () => {
+      header.setAttribute('data-scroll-state', 'scrolled');
+    },
+    onLeaveBack: () => {
+      header.setAttribute('data-scroll-state', 'top');
+    }
+  });
+}
 
 // ============================================
 // Text Reveal Animations

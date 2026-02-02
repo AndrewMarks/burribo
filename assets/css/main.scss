@@ -118,14 +118,28 @@ h3 {
 // Layout Structure
 // ============================================
 .site-header {
+  // CSS custom properties for animatable values
+  --header-height: 80px;
+  --header-bg: transparent;
+  --header-text: #000000;
+  --header-border: #000000;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: var(--space-sm) var(--space-md);
-  background-color: transparent;
-  border-top: 3px solid #000000;
+  height: var(--header-height);
+  padding: 0 var(--space-md);
+  background-color: var(--header-bg);
+  border-top: 3px solid var(--header-border);
+  display: flex;
+  align-items: center;
+
+  // Smooth CSS transition fallback (0.3s ease)
+  transition: height 0.3s ease,
+              background-color 0.3s ease,
+              border-color 0.3s ease;
 
   .header-inner {
     display: flex;
@@ -134,16 +148,18 @@ h3 {
     max-width: none;
     margin: 0;
     gap: 0;
+    width: 100%;
   }
 
   .site-logo {
     font-family: var(--font-primary);
     font-weight: 700;
     text-decoration: none;
-    color: #000000;
+    color: var(--header-text);
     letter-spacing: -0.01em;
     font-size: var(--text-sm);
     margin-right: auto;
+    transition: color 0.3s ease;
   }
 
   .nav-list {
@@ -158,14 +174,22 @@ h3 {
 
   .nav-link {
     text-decoration: none;
-    color: #000000;
+    color: var(--header-text);
     font-size: var(--text-sm);
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.3s ease;
 
     &:hover {
       opacity: 0.6;
     }
+  }
+
+  // Scrolled state: compact header with dark background
+  &[data-scroll-state="scrolled"] {
+    --header-height: 60px;
+    --header-bg: rgba(10, 10, 10, 0.98);
+    --header-text: #ffffff;
+    --header-border: rgba(10, 10, 10, 0.98);
   }
 }
 
