@@ -778,3 +778,19 @@ section {
   margin: 0 auto;
   width: 100%;
 }
+
+// ============================================
+// Scroll Reveal Animation States
+// ============================================
+
+// Initial states - visible by default for no-JS fallback
+// JS will handle the initial hidden state via GSAP
+// The mask property in SplitText handles overflow clipping
+
+.reveal-hero,
+.reveal-tagline,
+.reveal-heading {
+  // Visible by default for no-JS fallback
+  // GSAP SplitText handles the reveal animation
+  // Uses transform/opacity only for compositor thread performance
+}
