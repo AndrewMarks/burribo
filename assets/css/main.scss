@@ -3,6 +3,12 @@
 ---
 
 // ============================================
+// Jekyll Site Path Variable
+// ============================================
+// Set baseurl for asset paths (matches _config.yml baseurl)
+$baseurl: '/burribo';
+
+// ============================================
 // CSS Reset (Minimal)
 // ============================================
 *,
@@ -241,21 +247,21 @@ section {
 
 // Layer 1: Far stars (slowest, dimmest)
 .stars-1 {
-  background-image: url('/assets/img/stars-far.png');
+  background-image: url('#{$baseurl}/assets/img/stars-far.png');
   animation: drift 200s linear infinite;
   opacity: 0.5;
 }
 
 // Layer 2: Mid stars (medium speed)
 .stars-2 {
-  background-image: url('/assets/img/stars-mid.png');
+  background-image: url('#{$baseurl}/assets/img/stars-mid.png');
   animation: drift 120s linear infinite;
   opacity: 0.7;
 }
 
 // Layer 3: Near stars (fastest, brightest)
 .stars-3 {
-  background-image: url('/assets/img/stars-near.png');
+  background-image: url('#{$baseurl}/assets/img/stars-near.png');
   animation: drift 60s linear infinite;
   opacity: 1;
 }
