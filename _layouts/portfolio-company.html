@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<article class="company-page">
+  <section class="company-hero">
+    {% if page.logo %}
+    <img src="{{ page.logo | relative_url }}" alt="{{ page.title }} logo" class="company-hero__logo">
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.tagline %}
+    <p class="tagline">{{ page.tagline }}</p>
+    {% endif %}
+    <a href="{{ page.external_url }}" class="btn btn-primary" target="_blank" rel="noopener">
+      {{ page.external_cta | default: "Visit Website" }}
+    </a>
+  </section>
+
+  <section class="company-content section--content">
+    <div class="section-inner">
+      {{ content }}
+    </div>
+  </section>
+</article>
