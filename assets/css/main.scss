@@ -1571,3 +1571,36 @@ section {
     }
   }
 }
+
+// ============================================
+// Reduced Motion - Accessibility Support
+// ============================================
+// Respects user's motion preference for accessibility
+// Disables animations while preserving state changes
+
+@media (prefers-reduced-motion: reduce) {
+  // Disable scroll behavior smoothing
+  html {
+    scroll-behavior: auto;
+  }
+
+  // Disable star drift animation
+  .stars {
+    animation: none;
+  }
+
+  // Disable hotspot pulse animation
+  .hotspot::after {
+    animation: none;
+  }
+
+  // Reduce all animations and transitions to near-instant
+  // Using 0.01ms to maintain state changes while removing motion
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
