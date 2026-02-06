@@ -624,7 +624,7 @@ section {
 .btn {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  font-family: var(--font-display);
+  font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
   text-decoration: none;
@@ -913,7 +913,7 @@ section {
 
 // Portfolio hero variant - shorter than homepage, image-ready
 .portfolio-hero {
-  min-height: 60vh;
+  min-height: 40vh;
   background-color: var(--color-bg-deep);
   background-size: cover;
   background-position: center;
@@ -960,6 +960,7 @@ section {
 // Portfolio content area
 .portfolio-content {
   min-height: auto;
+  padding: var(--space-xl) var(--space-md);
 }
 
 // Project card enhancements for portfolio
