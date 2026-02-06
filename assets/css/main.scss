@@ -1289,3 +1289,161 @@ section {
   font-size: var(--text-base);
   line-height: 1.6;
 }
+
+// ============================================
+// Responsive Design - Mobile First
+// ============================================
+
+// Breakpoint reference (CSS custom properties can't be used in media queries)
+// --breakpoint-sm: 640px   - Mobile landscape
+// --breakpoint-md: 768px   - Tablet
+// --breakpoint-lg: 1024px  - Desktop
+// --breakpoint-xl: 1280px  - Large desktop
+
+// Mobile base styles (default, no media query needed)
+// These are already mobile-first due to clamp() usage
+
+// ----------------------------------------
+// Tablet and up (768px+)
+// ----------------------------------------
+@media (min-width: 768px) {
+  // Header adjustments for tablet
+  .site-header {
+    .nav-list {
+      margin-left: var(--space-lg);
+    }
+  }
+}
+
+// ----------------------------------------
+// Desktop and up (1024px+)
+// ----------------------------------------
+@media (min-width: 1024px) {
+  // Full header spacing on desktop
+  .site-header {
+    .nav-list {
+      margin-left: var(--space-xl);
+    }
+  }
+}
+
+// ----------------------------------------
+// Mobile styles (max-width approach for overrides)
+// ----------------------------------------
+@media (max-width: 767px) {
+  // Reduce section padding on mobile
+  section {
+    padding: var(--space-lg) var(--space-sm);
+    min-height: auto; // Remove min-height constraint on mobile
+  }
+
+  // Hero section mobile adjustments
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh; // Use small viewport height on mobile
+    padding-right: var(--space-sm);
+    padding-bottom: var(--space-md);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  // Header mobile adjustments
+  .site-header {
+    --header-height: 60px;
+    padding: 0 var(--space-sm);
+
+    .header-inner {
+      gap: var(--space-xs);
+    }
+
+    .site-logo {
+      font-size: calc(var(--text-sm) * 0.9);
+      margin-right: var(--space-sm);
+    }
+
+    .nav-list {
+      margin-left: var(--space-sm);
+      gap: var(--space-xs);
+    }
+
+    .nav-link {
+      font-size: calc(var(--text-sm) * 0.85);
+      padding: var(--space-xs) 0; // Touch-friendly tap targets
+    }
+
+    &[data-scroll-state="scrolled"] {
+      --header-height: 50px;
+    }
+  }
+
+  // Typography scale reduction for mobile
+  h1 {
+    font-size: clamp(2.5rem, 10vw, var(--text-hero));
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 8vw, var(--text-display));
+  }
+
+  // Portfolio hero mobile
+  .portfolio-hero {
+    min-height: 30vh;
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .portfolio-hero__title {
+    font-size: clamp(1.75rem, 8vw, var(--text-display));
+  }
+
+  .portfolio-hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  // Portfolio content mobile
+  .portfolio-content {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  // Company hero mobile
+  .company-hero {
+    min-height: 40vh;
+    padding: var(--space-lg) var(--space-sm);
+
+    h1 {
+      font-size: clamp(1.75rem, 8vw, var(--text-display));
+    }
+
+    .tagline {
+      font-size: var(--text-base);
+    }
+  }
+
+  // Company content mobile
+  .company-content {
+    padding: var(--space-lg) var(--space-sm);
+
+    h2 {
+      margin-top: var(--space-md);
+    }
+  }
+
+  // Blog styles mobile
+  .post {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .blog-index {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .blog-index__header h1 {
+    font-size: clamp(2rem, 8vw, var(--text-display));
+  }
+
+  // Footer mobile
+  .site-footer {
+    padding: var(--space-md) var(--space-sm);
+  }
+}
