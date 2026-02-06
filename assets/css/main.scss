@@ -329,6 +329,7 @@ section {
   padding: 0;
   text-decoration: none;
   display: block;
+  -webkit-tap-highlight-color: transparent;
 
   // Pixel star core - single bright pixel
   &::before {
