@@ -1361,16 +1361,33 @@ section {
     .site-logo {
       font-size: calc(var(--text-sm) * 0.9);
       margin-right: var(--space-sm);
+      flex-shrink: 0; // Prevent logo from being squished
     }
 
+    // Mobile nav: horizontal scroll approach (Option A from plan)
     .nav-list {
-      margin-left: var(--space-sm);
-      gap: var(--space-xs);
+      margin-left: var(--space-xs);
+      gap: var(--space-sm);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+      scrollbar-width: none; // Hide scrollbar on Firefox
+      -ms-overflow-style: none; // Hide scrollbar on IE/Edge
+
+      // Hide scrollbar on WebKit browsers
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .nav-link {
       font-size: calc(var(--text-sm) * 0.85);
-      padding: var(--space-xs) 0; // Touch-friendly tap targets
+      // Touch-friendly tap targets (min 44px)
+      padding: var(--space-sm) var(--space-xs);
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap; // Prevent text wrapping in scroll nav
     }
 
     &[data-scroll-state="scrolled"] {
