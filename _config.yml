@@ -1,7 +1,21 @@
 title: Andrew Marks
-description: Portfolio - Game Dev, TTRPG, Marketing, Theatre
+tagline: Game Developer, Writer, Advisor
+description: Andrew Marks is a game developer, writer, and advisor specializing in game development, TTRPG design, marketing strategy, and interactive storytelling.
 baseurl: ""  # No baseurl needed with custom domain
 url: "https://burribo.com"  # Custom domain
+
+# Author (for SEO)
+author:
+  name: Andrew Marks
+  url: https://burribo.com
+
+# Social / Open Graph
+twitter:
+  card: summary
+social:
+  name: Andrew Marks
+  links:
+    - https://www.linkedin.com/in/andrewjohnmarks/
 
 # Build settings
 markdown: kramdown
