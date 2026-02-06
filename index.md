@@ -60,6 +60,16 @@ title: Home
   </div>
 </section>
 
+<section class="writing section--content" id="writing">
+  <div class="section-inner reveal-section">
+    <div class="section-header">
+      <h2 class="reveal-heading">Writing</h2>
+    </div>
+    <p>Essays on game design, creative leadership, and the business of making games.</p>
+    <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">Read the Blog</a>
+  </div>
+</section>
+
 <section class="contact section--content" id="contact">
   <div class="section-inner reveal-section">
     <div class="section-header">
