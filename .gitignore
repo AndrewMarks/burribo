@@ -1,6 +1,7 @@
 # Planning and local only
 .planning/
 _serve/
+star-sandbox/
 
 # Jekyll build artifacts
 _site/
@@ -12,5 +13,12 @@ _site/
 .bundle/
 vendor/
 
-# Ruby gems lock (optional - some prefer to track this)
-# Gemfile.lock
+# V2 content (not included in V1)
+blog.md
+portfolio/
+_posts/
+_layouts/post.html
+_layouts/portfolio-visual.html
+_layouts/portfolio-company.html
+_includes/header.html
+_includes/breadcrumb.html
