@@ -1,7 +1,7 @@
 title: Andrew Marks
 description: Portfolio - Game Dev, TTRPG, Marketing, Theatre
-baseurl: "/burribo"  # Repo name for project pages
-url: "https://andrewmarks.github.io"  # GitHub Pages URL
+baseurl: ""  # No baseurl needed with custom domain
+url: "https://burribo.com"  # Custom domain
 
 # Build settings
 markdown: kramdown
