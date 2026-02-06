@@ -784,6 +784,9 @@ section {
 // ============================================
 // Scroll Reveal Animation States
 // ============================================
+// Performance note: All animations use compositor-only properties
+// (transform, opacity) for 60fps GPU-accelerated rendering.
+// will-change is applied sparingly to avoid memory overhead.
 
 // Initial states - visible by default for no-JS fallback
 // JS will handle the initial hidden state via GSAP
