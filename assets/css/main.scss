@@ -24,7 +24,7 @@ $baseurl: '/burribo';
 // ============================================
 :root {
   // ----------------------------------------
-  // Colors - VALORANT-inspired palette
+  // Colors - Dark theme palette
   // ----------------------------------------
 
   // Background tones (dark dominant, refined)
@@ -245,13 +245,18 @@ section {
   padding-right: var(--space-md);
 }
 
+// V1: Full viewport hero (no scrolling)
+.hero--fullscreen {
+  height: 100vh;
+  height: 100dvh; // Dynamic viewport height for mobile
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 // Space background container
 .space-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; // Covers full hero regardless of dynamic height
   z-index: 1;
 }
 
@@ -260,9 +265,9 @@ section {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0; // Stretch to full height of space-bg
   width: 300%;
-  height: 100%;
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-size: 33.33% auto;
   will-change: transform;
   image-rendering: pixelated;
@@ -316,8 +321,8 @@ section {
 .hotspot {
   position: absolute;
   pointer-events: auto;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -325,31 +330,50 @@ section {
   text-decoration: none;
   display: block;
 
-  // Visible star dot
+  // Pixel star core - single bright pixel
   &::before {
     content: '';
     position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--color-fg);
-    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.5);
+    image-rendering: pixelated;
   }
 
-  // Pulse ring animation
+  // Twinkle animation (subtle brightness pulse)
   &::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: transparent;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: pulse 2s ease-out infinite;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.6);
+    animation: twinkle 2s ease-in-out infinite;
+  }
+}
+
+// Stagger twinkle animations so hotspots don't blink together
+// Negative delays start animation mid-cycle (no frozen wait)
+.hotspot:nth-child(1)::after { animation-delay: 0s; }
+.hotspot:nth-child(2)::after { animation-delay: -0.5s; }
+.hotspot:nth-child(3)::after { animation-delay: -1.0s; }
+.hotspot:nth-child(4)::after { animation-delay: -1.5s; }
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
   }
 }
 
@@ -1592,7 +1616,7 @@ section {
     animation: none;
   }
 
-  // Disable hotspot pulse animation
+  // Disable hotspot twinkle animation
   .hotspot::after {
     animation: none;
   }

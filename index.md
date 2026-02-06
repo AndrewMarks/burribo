@@ -3,23 +3,26 @@ layout: default
 title: Home
 ---
 
-<section class="hero" id="hero">
+<section class="hero hero--fullscreen" id="hero">
   <!-- Space background layers -->
   <div class="space-bg">
     <div class="stars stars-1"></div>
     <div class="stars stars-2"></div>
     <div class="stars stars-3"></div>
 
-    <!-- Clickable easter egg hotspots -->
+    <!-- Clickable easter egg hotspots (safe zones: top half, bottom-left) -->
     <div class="hotspots">
-      <a class="hotspot" href="https://quailworks.com/" target="_blank" rel="noopener" style="top: 20%; left: 15%;">
+      <a class="hotspot" href="https://quailworks.com/" target="_blank" rel="noopener" style="top: 25%; left: 20%;">
         <span class="tooltip">My consultancy.</span>
       </a>
-      <a class="hotspot" href="https://www.kickstarter.com/projects/villageonstilts/trail-of-the-behemoth-second-edition-and-neon-hope-rpg" target="_blank" rel="noopener" style="top: 50%; left: 75%;">
+      <a class="hotspot" href="https://www.kickstarter.com/projects/villageonstilts/trail-of-the-behemoth-second-edition-and-neon-hope-rpg" target="_blank" rel="noopener" style="top: 15%; left: 70%;">
         <span class="tooltip">Currently writing...</span>
       </a>
-      <a class="hotspot" href="https://www.youtube.com/watch?v=mANS2qseQ2I" target="_blank" rel="noopener" style="top: 70%; left: 40%;">
+      <a class="hotspot" href="https://www.youtube.com/watch?v=mANS2qseQ2I" target="_blank" rel="noopener" style="top: 65%; left: 15%;">
         <span class="tooltip">Meet Gene Christ.</span>
+      </a>
+      <a class="hotspot" href="https://www.linkedin.com/in/andrewjohnmarks/" target="_blank" rel="noopener" style="top: 40%; left: 45%;">
+        <span class="tooltip">Let's connect.</span>
       </a>
     </div>
   </div>
@@ -28,53 +31,5 @@ title: Home
   <div class="hero-content">
     <h1 class="reveal-hero">Andrew<br>Marks</h1>
     <p class="tagline reveal-tagline">game developer, writer, advisor</p>
-  </div>
-</section>
-
-<section class="work section--content" id="work">
-  <div class="section-inner reveal-section">
-    <div class="section-header">
-      <h2 class="reveal-heading">Work</h2>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <h3 class="card-title">Project Title</h3>
-        <p class="card-meta">Category / Year</p>
-        <p class="card-body">Brief project description placeholder.</p>
-      </div>
-      <div class="card">
-        <h3 class="card-title">Another Project</h3>
-        <p class="card-meta">Category / Year</p>
-        <p class="card-body">Brief project description placeholder.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="about section--content" id="about">
-  <div class="section-inner reveal-section">
-    <div class="section-header">
-      <h2 class="reveal-heading">About</h2>
-    </div>
-    <!-- About content will go here -->
-  </div>
-</section>
-
-<section class="writing section--content" id="writing">
-  <div class="section-inner reveal-section">
-    <div class="section-header">
-      <h2 class="reveal-heading">Writing</h2>
-    </div>
-    <p>Essays on game design, creative leadership, and the business of making games.</p>
-    <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">Read the Blog</a>
-  </div>
-</section>
-
-<section class="contact section--content" id="contact">
-  <div class="section-inner reveal-section">
-    <div class="section-header">
-      <h2 class="reveal-heading">Contact</h2>
-    </div>
-    <!-- Contact info will go here -->
   </div>
 </section>

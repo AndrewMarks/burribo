@@ -1,5 +1,6 @@
-# Planning and AI-generated docs (local only)
+# Planning and local only
 .planning/
+_serve/
 
 # Jekyll build artifacts
 _site/
