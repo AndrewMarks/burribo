@@ -150,3 +150,46 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
   });
 });
+
+// ============================================
+// Hotspot Two-Tap Behavior (Mobile)
+// ============================================
+// First tap: show tooltip
+// Second tap: navigate to link
+
+(function() {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (!isTouchDevice) return;
+
+  let activeHotspot = null;
+
+  document.querySelectorAll('.hotspot').forEach(hotspot => {
+    hotspot.addEventListener('click', (e) => {
+      if (activeHotspot === hotspot) {
+        // Second tap - allow navigation (don't prevent default)
+        activeHotspot = null;
+      } else {
+        // First tap - show tooltip, prevent navigation
+        e.preventDefault();
+
+        // Remove active state from previous hotspot
+        if (activeHotspot) {
+          activeHotspot.classList.remove('hotspot--active');
+        }
+
+        // Activate this hotspot
+        hotspot.classList.add('hotspot--active');
+        activeHotspot = hotspot;
+      }
+    });
+  });
+
+  // Tap elsewhere to deactivate
+  document.addEventListener('click', (e) => {
+    if (activeHotspot && !e.target.closest('.hotspot')) {
+      activeHotspot.classList.remove('hotspot--active');
+      activeHotspot = null;
+    }
+  });
+})();

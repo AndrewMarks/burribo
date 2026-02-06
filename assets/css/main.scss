@@ -407,7 +407,8 @@ section {
 }
 
 .hotspot:hover .tooltip,
-.hotspot:focus .tooltip {
+.hotspot:focus .tooltip,
+.hotspot--active .tooltip {
   opacity: 1;
 }
 
