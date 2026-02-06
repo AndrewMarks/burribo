@@ -6,4 +6,4 @@ external_url: https://quailworks.com/
 external_cta: Visit Quailworks
 ---
 
-Performance marketing consultancy specializing in the games industry. Data-driven campaigns, analytics, and growth strategies for mobile and PC platforms.
+A performance marketing consultancy built for the games industry. We turn player acquisition into a science — data-driven campaigns, deep analytics, and growth strategies that scale across mobile and PC platforms.
