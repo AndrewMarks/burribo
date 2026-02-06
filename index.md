@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Andrew Marks | Game Developer, Writer, Advisor
+title: andrew marks | game developer, writer, advisor
 description: Andrew Marks is a game developer, writer, and strategic advisor with experience in game development, TTRPG design, and interactive storytelling.
 image: /assets/favicon/favicon-180x180.png
 ---
