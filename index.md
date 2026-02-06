@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: andrew marks | game developer, writer, advisor
 ---
 
 <section class="hero hero--fullscreen" id="hero">
