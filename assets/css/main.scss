@@ -1446,4 +1446,51 @@ section {
   .site-footer {
     padding: var(--space-md) var(--space-sm);
   }
+
+  // ----------------------------------------
+  // Grid Layouts - Mobile (single column)
+  // ----------------------------------------
+
+  // Card grid: single column on mobile
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  // Services grid: single column on mobile
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  // Image gallery: single column on mobile
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  // Project cards: reduce content padding on mobile
+  .project-card .card-content {
+    padding: var(--space-sm) !important;
+  }
+}
+
+// ----------------------------------------
+// Grid Layouts - Tablet (2 columns)
+// ----------------------------------------
+@media (min-width: 640px) and (max-width: 1023px) {
+  // Card grid: 2 columns on tablet
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Services grid: 2 columns on tablet
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Image gallery: 2 columns on tablet
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
