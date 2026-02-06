@@ -13,6 +13,8 @@ Front matter variables:
   - projects: Array of project objects (optional - can also use markdown)
 {%- endcomment -%}
 
+{% include breadcrumb.html %}
+
 <!-- Portfolio Hero Section -->
 <section class="portfolio-hero{% if page.hero_image %} portfolio-hero--has-image{% endif %}"{% if page.hero_image %} style="background-image: linear-gradient(to top, var(--color-bg-deep) 0%, transparent 100%), url('{{ page.hero_image | relative_url }}');"{% endif %}>
   <div class="portfolio-hero__content">

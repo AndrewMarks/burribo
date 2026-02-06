@@ -1,0 +1,15 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    {% if page.layout == 'post' %}
+      <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+    {% elsif page.layout == 'portfolio-visual' or page.layout == 'portfolio-company' %}
+      {% if page.category %}
+        <li><a href="{{ '/' | relative_url }}#portfolio">{{ page.category }}</a></li>
+      {% else %}
+        <li><a href="{{ '/' | relative_url }}#portfolio">Portfolio</a></li>
+      {% endif %}
+    {% endif %}
+    <li aria-current="page">{{ page.title }}</li>
+  </ol>
+</nav>
