@@ -9,6 +9,9 @@
  * - Reduced motion preference is respected throughout
  */
 
+// Remove no-js class if JS is available
+document.documentElement.classList.remove('no-js');
+
 // ============================================
 // Reduced Motion Detection
 // ============================================
@@ -71,6 +74,48 @@ if (!prefersReducedMotion) {
     delay: 1.0  // After hero text animation
   });
 
+  // Hero nav link - fade in after tagline
+  gsap.fromTo("#hero-nav",
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      delay: 1.8
+    }
+  );
+
+  // Writing section - progressive reveal (opacity only, no movement)
+  gsap.set(".reveal-writing", { opacity: 0 });
+  gsap.set(".reveal-writing-divider", { scaleX: 0 });
+
+  document.querySelectorAll('.reveal-writing').forEach((el, i) => {
+    gsap.to(el, {
+      opacity: 1,
+      duration: 0.7,
+      ease: "power2.out",
+      delay: i * 0.1,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+  });
+
+  document.querySelectorAll('.reveal-writing-divider').forEach(rule => {
+    gsap.to(rule, {
+      scaleX: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: rule,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+  });
+
   // Section heading reveals - scroll-triggered
   document.querySelectorAll('.reveal-heading').forEach(heading => {
     gsap.from(heading, {
@@ -127,6 +172,12 @@ if (!prefersReducedMotion) {
     start: "top 90%",
     once: true  // Only animate once
   });
+}
+
+if (prefersReducedMotion) {
+  // Show hero nav immediately when motion is reduced
+  const heroNav = document.getElementById('hero-nav');
+  if (heroNav) heroNav.style.opacity = '1';
 }
 
 // ============================================
