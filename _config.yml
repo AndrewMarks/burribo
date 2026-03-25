@@ -19,6 +19,7 @@ social:
 
 # Build settings
 markdown: kramdown
+permalink: /writing/:slug/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -30,6 +31,7 @@ exclude:
   - node_modules/
   - vendor/
   - .planning/
+  - docs/
 
 # Collections (for future portfolio items)
 collections_dir: collections

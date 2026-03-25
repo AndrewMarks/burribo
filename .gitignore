@@ -1,5 +1,6 @@
-# Planning and local only
+# Claude Code / AI tooling (never commit)
 .planning/
+CLAUDE.md
 _serve/
 star-sandbox/
 
@@ -14,11 +15,9 @@ _site/
 vendor/
 
 # V2 content (not included in V1)
-blog.md
 portfolio/
-_posts/
-_layouts/post.html
 _layouts/portfolio-visual.html
 _layouts/portfolio-company.html
 _includes/header.html
 _includes/breadcrumb.html
+.superpowers/
