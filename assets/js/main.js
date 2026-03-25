@@ -28,16 +28,17 @@ gsap.registerPlugin(ScrollTrigger);
 // Only initialize Lenis if user doesn't prefer reduced motion
 let lenis = null;
 
-if (!prefersReducedMotion) {
+const isTouchOnly = 'ontouchstart' in window && !window.matchMedia('(pointer: fine)').matches;
+
+if (!prefersReducedMotion && !isTouchOnly) {
   lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smooth: true,
-    smoothTouch: false,  // Better for iOS compatibility
+    smoothTouch: false,
     touchMultiplier: 2
   });
 
-  // Sync Lenis with GSAP ticker (Pattern 5 from RESEARCH.md)
   lenis.on('scroll', ScrollTrigger.update);
 
   gsap.ticker.add((time) => {
