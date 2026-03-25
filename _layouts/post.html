@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="post-page">
+  <nav class="post-topbar">
+    <a href="/#writing" class="post-topbar__back">← back</a>
+    <a href="/" class="post-topbar__name">Andrew Marks</a>
+  </nav>
+
+  <header class="post-page__header">
+    <span class="post-page__meta">
+      {{ page.category | capitalize }} · {{ page.date | date: "%B %Y" }} · {% assign words = content | number_of_words %}{% assign minutes = words | plus: 199 | divided_by: 200 %}{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}{{ minutes }} min read
+    </span>
+    <h1 class="post-page__title">{{ page.title }}</h1>
+    <hr class="post-page__rule">
+  </header>
+
+  <div class="post-page__body">
+    {{ content }}
+  </div>
+</article>
