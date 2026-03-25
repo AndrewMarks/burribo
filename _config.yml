@@ -32,9 +32,10 @@ exclude:
   - vendor/
   - .planning/
   - docs/
+  - CLAUDE.md
 
 # Collections (for future portfolio items)
-collections_dir: collections
+# collections_dir: collections
 
 # Defaults
 defaults:
