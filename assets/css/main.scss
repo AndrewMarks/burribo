@@ -1295,11 +1295,11 @@ section {
 }
 
 .post-page__rule {
-  display: block;
-  font-size: 24px;
-  color: #888;
+  border: none;
+  height: 1px;
+  background: #444;
   margin-bottom: var(--space-lg);
-  letter-spacing: 0.2em;
+  width: 30px;
 }
 
 .post-page__body {
