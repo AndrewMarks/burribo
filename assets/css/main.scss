@@ -1297,7 +1297,7 @@ section {
 .post-page__rule {
   border: none;
   height: 1px;
-  background: #2a2a2a;
+  background: #444;
   margin-bottom: var(--space-lg);
   width: 30px;
 }
@@ -1360,6 +1360,13 @@ section {
 
   li {
     margin-bottom: 0.5em;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: #444;
+    margin: 2em 0;
   }
 
   blockquote {
