@@ -1125,7 +1125,7 @@ section {
   padding: 0 80px;
 }
 
-.writing-topbar {
+.site-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1133,8 +1133,14 @@ section {
   border-bottom: 1px solid #2a2a2a;
 }
 
-.writing-topbar__back,
-.writing-topbar__name {
+.site-topbar--narrow {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.site-topbar__back,
+.site-topbar__name {
   font-family: var(--font-primary);
   font-size: 13px;
   color: var(--color-fg-muted);
@@ -1147,7 +1153,7 @@ section {
   }
 }
 
-.writing-topbar__title {
+.site-topbar__title {
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: 600;
@@ -1244,28 +1250,6 @@ section {
   min-height: 100vh;
 }
 
-.post-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-md);
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.post-topbar__back,
-.post-topbar__name {
-  font-family: var(--font-primary);
-  font-size: 13px;
-  color: var(--color-fg-muted);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: var(--color-fg);
-  }
-}
 
 .post-page__header {
   max-width: 720px;
@@ -1577,8 +1561,12 @@ section {
     padding: 0 24px;
   }
 
-  .writing-topbar {
+  .site-topbar {
     padding: var(--space-sm) 0;
+  }
+
+  .site-topbar--narrow {
+    padding: var(--space-sm);
   }
 
   .writing-entry {
@@ -1623,11 +1611,6 @@ section {
 
   .hero-nav__link {
     font-size: 20px;
-  }
-
-  // Post page mobile
-  .post-topbar {
-    padding: var(--space-sm);
   }
 
   .post-page__header {
