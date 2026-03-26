@@ -1364,9 +1364,17 @@ section {
 
   hr {
     border: none;
-    height: 1px;
-    background: #444;
-    margin: 2em 0;
+    background: none;
+    height: auto;
+    margin: 2.5em 0;
+    text-align: center;
+
+    &::after {
+      content: '* * *';
+      color: #888;
+      font-size: 18px;
+      letter-spacing: 0.3em;
+    }
   }
 
   blockquote {
