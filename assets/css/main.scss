@@ -1294,12 +1294,11 @@ section {
   margin-bottom: var(--space-md);
 }
 
-.post-page__rule {
-  border: none;
-  height: 1px;
-  background: #444;
+.post-page__separator {
+  display: block;
+  color: #888;
+  font-size: 18px;
   margin-bottom: var(--space-lg);
-  width: 30px;
 }
 
 .post-page__body {
@@ -1360,20 +1359,6 @@ section {
 
   li {
     margin-bottom: 0.5em;
-  }
-
-  hr {
-    all: unset;
-    display: block;
-    margin: 2.5em 0;
-    text-align: center;
-
-    &::after {
-      content: '* * *';
-      color: #888;
-      font-size: 18px;
-      letter-spacing: 0.3em;
-    }
   }
 
   blockquote {

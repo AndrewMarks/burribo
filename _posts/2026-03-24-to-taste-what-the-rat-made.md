@@ -10,7 +10,7 @@ Many of my friends went one of two ways in 2020 when we all stayed inside. They 
 
 No one really teaches you how to mix a drink. There's books you can read, ideas that can inspire you, but you can't put it in an oven at 325 for 18 minutes until it reaches an internal temperature of 145. To really do it right, it's a collaboration with memory, expectant faces in front of you, remembered faces behind, and bold flavors you can still taste with haze around the edges. The best cocktails are stories you get to sip.
 
----
+\* \* \*
 
 If you had asked me last Monday, I would have said that the best Pixar film is WALL-E.
 
@@ -34,7 +34,7 @@ Nobody I've met has puppet raccoons on their head, we're not subject to tyrannou
 
 I feel like Ratatouille has entered a collective distortive memory. Maybe a little like the daiquiri: rum, lime, and sugar muddled -- not strawberry syrup and ice and ninja blenders. A stiff drink is memory and experience.
 
----
+\* \* \*
 
 To make anything great, we must deeply understand the work that has come before. A negroni is gin, campari, and sweet vermouth -- and it has been since 1919. Bold, sexy innovations fade to be classics eventually. Give it a twist, substitute campari for aperol you devil. The twist only draws breath if you know what you're remixing, if you've tasted the original enough times that the substitution isn't a guess but your point of view grounded in some other experience that -- if all goes perfectly right -- you might just impart with a sip.
 
