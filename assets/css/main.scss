@@ -1253,8 +1253,8 @@ section {
 
 .post-page__header {
   max-width: 720px;
-  margin: var(--space-lg) auto 0;
-  padding: 0 var(--space-md);
+  margin: 0 auto;
+  padding: 48px var(--space-md) 0;
 }
 
 .post-page__meta {
@@ -1614,8 +1614,7 @@ section {
   }
 
   .post-page__header {
-    margin-top: var(--space-md);
-    padding: 0 var(--space-sm);
+    padding: 28px var(--space-sm) 0;
   }
 
   .post-page__body {
