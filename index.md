@@ -18,7 +18,7 @@ image: /assets/favicon/favicon-180x180.png
         <span class="tooltip">My consultancy.</span>
       </a>
       <a class="hotspot" href="https://www.kickstarter.com/projects/villageonstilts/trail-of-the-behemoth-second-edition-and-neon-hope-rpg" target="_blank" rel="noopener" style="top: 15%; left: 70%;">
-        <span class="tooltip">Currently writing...</span>
+        <span class="tooltip">Village on Stilts.</span>
       </a>
       <a class="hotspot" href="https://www.youtube.com/watch?v=mANS2qseQ2I" target="_blank" rel="noopener" style="top: 65%; left: 15%;">
         <span class="tooltip">Meet Gene Christ.</span>

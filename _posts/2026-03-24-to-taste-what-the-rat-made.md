@@ -2,7 +2,7 @@
 layout: post
 title: "To Taste What the Rat Made"
 category: essay
-description: "On cocktails, Pixar, and the ghosts that guide every creative decision we make."
+description: "Making, memory, and that little voice who pushes us forward."
 date: 2026-03-24
 ---
 
@@ -10,7 +10,7 @@ Many of my friends went one of two ways in 2020 when we all stayed inside. They 
 
 No one really teaches you how to mix a drink. There's books you can read, ideas that can inspire you, but you can't put it in an oven at 325 for 18 minutes until it reaches an internal temperature of 145. To really do it right, it's a collaboration with memory, expectant faces in front of you, remembered faces behind, and bold flavors you can still taste with haze around the edges. The best cocktails are stories you get to sip.
 
-\* \* \*
+<p class="section-break">*</p>
 
 If you had asked me last Monday, I would have said that the best Pixar film is WALL-E.
 
@@ -34,7 +34,7 @@ Nobody I've met has puppet raccoons on their head, we're not subject to tyrannou
 
 I feel like Ratatouille has entered a collective distortive memory. Maybe a little like the daiquiri: rum, lime, and sugar muddled -- not strawberry syrup and ice and ninja blenders. A stiff drink is memory and experience.
 
-\* \* \*
+<p class="section-break">*</p>
 
 To make anything great, we must deeply understand the work that has come before. A negroni is gin, campari, and sweet vermouth -- and it has been since 1919. Bold, sexy innovations fade to be classics eventually. Give it a twist, substitute campari for aperol you devil. The twist only draws breath if you know what you're remixing, if you've tasted the original enough times that the substitution isn't a guess but your point of view grounded in some other experience that -- if all goes perfectly right -- you might just impart with a sip.
 
@@ -42,4 +42,4 @@ Every creative decision anyone has ever made is a rat under our hats. What mixes
 
 No artistic endeavor -- doubly so for any scientific advancement -- was made alone by an individual. Where we arrive after consensus and collaboration is the very best of us: a synthesis, uncompromised, with hope of where we might get to if it all comes together.
 
-Every time I mix a drink, I ask my friend what they want. I remember what I've made before, what I have to hand, and what I think they might like based on what they say. Cheers to that.
+Every time I mix a drink, I ask my friend what they want. I remember what I've made before, what I have to hand, and what I think they might like based on what they say. Then something else takes over.
