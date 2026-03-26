@@ -1060,7 +1060,7 @@ section {
 .hero-nav {
   position: absolute;
   bottom: var(--space-lg);
-  left: var(--space-lg);
+  left: 5vw;
   z-index: 10;
   opacity: 0;
   display: flex;
@@ -1608,7 +1608,6 @@ section {
 
   .hero-nav {
     bottom: var(--space-md);
-    left: var(--space-sm);
     flex-direction: column;
     gap: 12px;
   }
