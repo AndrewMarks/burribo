@@ -1062,14 +1062,17 @@ section {
   left: var(--space-md);
   z-index: 10;
   opacity: 0;
+  display: flex;
+  gap: 24px;
 }
 
 .hero-nav__link {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
   color: var(--color-fg-muted);
   text-decoration: none;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: lowercase;
   transition: color 0.3s ease;
 
@@ -1505,6 +1508,8 @@ section {
   .hero-nav {
     bottom: var(--space-md);
     left: var(--space-sm);
+    flex-direction: column;
+    gap: 12px;
   }
 
   // Post page mobile
