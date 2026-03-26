@@ -1086,45 +1086,90 @@ section {
 }
 
 // ============================================
-// Hero → Writing Transition
+// Writing Page - Starfield Header
 // ============================================
-.hero-to-writing-transition {
-  height: 80px;
+.writing-starfield {
+  height: 60px;
   background: linear-gradient(to bottom, var(--color-bg-deep), var(--color-bg));
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 40%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 35% 20%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 55% 60%, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+      radial-gradient(circle at 25% 70%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 65% 15%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    opacity: 0.6;
+  }
 }
 
 // ============================================
-// Writing Section - Blog Index on Homepage
+// Writing Page - Layout
 // ============================================
-.writing-section {
+.writing-page {
   background-color: var(--color-bg);
-  padding: var(--space-lg) var(--space-md);
-  padding-top: 0;
-  min-height: auto;
-  display: block;
+  min-height: 100vh;
 }
 
-.writing-section__inner {
-  max-width: 720px;
+.writing-container {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
-.writing-section__label {
-  display: block;
+.writing-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-bg-elevated);
+}
+
+.writing-topbar__back,
+.writing-topbar__name {
   font-family: var(--font-primary);
-  font-size: 12px;
-  font-weight: var(--font-weight-normal);
-  color: #767676;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-fg);
+  }
+}
+
+.writing-topbar__title {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-fg);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: var(--space-md);
+}
+
+// ============================================
+// Writing Page - Entry List (Desktop Split)
+// ============================================
+.writing-entries {
+  padding: 48px 0;
 }
 
 .writing-entry {
-  display: block;
+  display: flex;
+  gap: 64px;
+  padding: 40px 0;
+  align-items: baseline;
   text-decoration: none;
-  padding: var(--space-md) 0;
-  transition: transform 0.2s ease;
+  color: inherit;
+  transition: opacity 0.2s ease;
 
   &:hover {
     .writing-entry__title {
@@ -1133,33 +1178,53 @@ section {
   }
 }
 
-.writing-entry__meta {
-  display: block;
+.writing-entry__meta-col {
+  min-width: 180px;
+  flex-shrink: 0;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.writing-entry__date {
   font-family: var(--font-primary);
-  font-size: 11px;
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.writing-entry__cat {
+  font-family: var(--font-primary);
+  font-size: 12px;
   color: #767676;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-xs);
-  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.writing-entry__content-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .writing-entry__title {
-  display: block;
-  font-family: var(--font-primary);
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-weight: 600;
+  font-family: var(--font-display-editorial);
+  font-size: 38px;
+  font-weight: 800;
   color: var(--color-fg);
-  line-height: 1.3;
-  margin-bottom: var(--space-xs);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
   transition: color 0.2s ease;
 }
 
 .writing-entry__excerpt {
-  display: block;
   font-family: var(--font-primary);
-  font-size: 15px;
-  color: var(--color-fg-muted);
+  font-size: 17px;
+  color: #999;
   line-height: 1.5;
+  max-width: 640px;
 }
 
 .writing-entry__divider {
@@ -1499,10 +1564,44 @@ section {
     }
   }
 
-  // Writing section mobile
-  .writing-section {
-    padding: var(--space-md) var(--space-sm);
+  // Writing page mobile
+  .writing-container {
+    padding: 0 24px;
+  }
+
+  .writing-topbar {
+    padding: 20px 0;
+  }
+
+  .writing-entry {
+    display: block;
+    padding: 28px 0;
+  }
+
+  .writing-entry__meta-col {
+    flex-direction: row;
+    margin-bottom: 10px;
+    min-width: auto;
     padding-top: 0;
+  }
+
+  .writing-entry__date,
+  .writing-entry__cat {
+    font-size: 12px;
+    color: #767676;
+    letter-spacing: 0.05em;
+  }
+
+  .writing-entry__date::after {
+    content: ' · ';
+  }
+
+  .writing-entry__cat {
+    margin-top: 0;
+  }
+
+  .writing-entry__title {
+    font-size: 32px;
   }
 
   .hero-nav {
