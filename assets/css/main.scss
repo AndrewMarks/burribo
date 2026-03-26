@@ -434,7 +434,7 @@ section {
   }
 
   .tagline {
-    font-size: var(--text-sm);
+    font-size: 16px;
     color: var(--color-fg);
     font-weight: var(--font-weight-normal);
     opacity: 0.7;
@@ -1060,7 +1060,7 @@ section {
 .hero-nav {
   position: absolute;
   bottom: var(--space-lg);
-  left: 5vw;
+  left: 10vw;
   z-index: 10;
   opacity: 0;
   display: flex;
