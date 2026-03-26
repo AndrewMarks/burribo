@@ -1363,9 +1363,11 @@ section {
   }
 
   hr {
-    border: none;
-    background: none;
-    height: auto;
+    border: 0;
+    background: transparent;
+    height: 0;
+    outline: none;
+    box-shadow: none;
     margin: 2.5em 0;
     text-align: center;
 
