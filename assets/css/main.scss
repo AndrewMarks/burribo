@@ -1294,8 +1294,16 @@ section {
   margin-bottom: var(--space-md);
 }
 
+.post-page__rule {
+  height: 1px;
+  background: #444;
+  width: 30px;
+  margin-bottom: var(--space-md);
+}
+
 .post-page__separator {
   display: block;
+  text-align: center;
   color: #888;
   font-size: 18px;
   margin-bottom: var(--space-lg);
