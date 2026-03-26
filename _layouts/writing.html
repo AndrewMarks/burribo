@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="writing-starfield"></div>
+
+<div class="writing-page">
+  <div class="writing-container">
+    <nav class="writing-topbar">
+      <a href="/" class="writing-topbar__back">← back</a>
+      <span class="writing-topbar__title">Writing</span>
+      <a href="/" class="writing-topbar__name">Andrew Marks</a>
+    </nav>
+
+    <div class="writing-entries">
+      {% for post in site.posts %}
+      <a href="{{ post.url | relative_url }}" class="writing-entry reveal-writing">
+        <div class="writing-entry__meta-col">
+          <span class="writing-entry__date">{{ post.date | date: "%B %Y" }}</span>
+          <span class="writing-entry__cat">{{ post.category | capitalize }} · {% assign words = post.content | number_of_words %}{% assign minutes = words | plus: 199 | divided_by: 200 %}{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}{{ minutes }} min read</span>
+        </div>
+        <div class="writing-entry__content-col">
+          <span class="writing-entry__title">{{ post.title }}</span>
+          <span class="writing-entry__excerpt">{{ post.description }}</span>
+        </div>
+      </a>
+      {% unless forloop.last %}<hr class="writing-entry__divider reveal-writing-divider">{% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
