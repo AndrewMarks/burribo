@@ -37,27 +37,6 @@ image: /assets/favicon/favicon-180x180.png
 
   <!-- Bottom-left nav -->
   <nav class="hero-nav" id="hero-nav">
-    <a href="#writing" class="hero-nav__link">writing</a>
+    <a href="/writing/" class="hero-nav__link">writing</a>
   </nav>
-</section>
-
-<div class="hero-to-writing-transition"></div>
-
-<section class="writing-section" id="writing">
-  <div class="writing-section__inner">
-    <span class="writing-section__label reveal-writing">Writing</span>
-
-    <div class="writing-section__list">
-      {% for post in site.posts %}
-      <a href="{{ post.url | relative_url }}" class="writing-entry reveal-writing">
-        <span class="writing-entry__meta">
-          {{ post.date | date: "%B %Y" }} · {{ post.category | capitalize }} · {% assign words = post.content | number_of_words %}{% assign minutes = words | plus: 199 | divided_by: 200 %}{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}{{ minutes }} min read
-        </span>
-        <span class="writing-entry__title">{{ post.title }}</span>
-        <span class="writing-entry__excerpt">{{ post.description }}</span>
-      </a>
-      {% unless forloop.last %}<hr class="writing-entry__divider reveal-writing-divider">{% endunless %}
-      {% endfor %}
-    </div>
-  </div>
 </section>
