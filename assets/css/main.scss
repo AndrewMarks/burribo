@@ -1363,11 +1363,8 @@ section {
   }
 
   hr {
-    border: 0;
-    background: transparent;
-    height: 0;
-    outline: none;
-    box-shadow: none;
+    all: unset;
+    display: block;
     margin: 2.5em 0;
     text-align: center;
 
